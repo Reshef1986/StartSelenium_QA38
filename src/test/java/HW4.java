@@ -26,14 +26,19 @@ public class HW4  {
 
         List<WebElement> elements = wd.findElements(By.cssSelector("#customers tr th"));
         System.out.println("columns = " + elements.size());
-
+//если первую считать
         WebElement row3 = wd.findElement(By.cssSelector("#customers tr:nth-child(3)"));
         String string = row3.getText();
+        System.out.println(string);
+//если первую  не считать
+         row3 = wd.findElement(By.cssSelector("#customers tr:nth-child(4)"));
+         string = row3.getText();
         System.out.println(string);
 
         WebElement lastColumn = wd.findElement(By.cssSelector("#customers tr th:last-child"));
         string  = lastColumn.getText();
         System.out.println(string);
+
    init("https://telranedu.web.app/home");
    Thread.sleep(1000);
 click(By.cssSelector("[href='/login']"));
